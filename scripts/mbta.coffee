@@ -2,7 +2,7 @@
 # hubot script for interacting with the MBTA API interactively
 ###
 
-mbtaApiKey = '' # Enter your mbta api key here
+mbtaApiKey = process.env.MBTA_API_KEY
 mbtaURL = 'http://realtime.mbta.com/developer/api/v2/'
 _i = 0
 _len = 0
