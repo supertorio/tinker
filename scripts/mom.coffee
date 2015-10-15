@@ -1,6 +1,5 @@
 ###*
 # hubot script for telling Mom Jokes
-# @author Tori Holmes-Kirk
 ###
 
 jokes = [

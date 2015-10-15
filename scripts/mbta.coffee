@@ -1,6 +1,5 @@
 ###*
 # hubot script for interacting with the MBTA API interactively
-# @author Tori Holmes-Kirk
 ###
 
 mbtaApiKey = '' # Enter your mbta api key here
