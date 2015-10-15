@@ -46,7 +46,7 @@ getTimesForStop = (msg, line, station) ->
 
 module.exports = (robot) ->
 
-  robot.respond /what is the mbta status/i, (msg) ->
+  robot.respond /mbta status/i, (msg) ->
     getMBTAStatus msg
 
   robot.respond /what is the next (orange|red|green|blue|silver)(?: line)? train at (.*)(.?)/i, (msg) ->
