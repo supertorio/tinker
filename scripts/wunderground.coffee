@@ -13,13 +13,14 @@ getRequest = (robot, url, callback) ->
 printForecast = (robot, daysFC) ->
   output = ""
   for fc in daysFC
-    output += "*#{fc.title}*: #{fc.fcttext}\n"
+    output += "*#{fc.title}*: ![#{fc.icon}](#{fc.icon_url}) #{fc.fcttext}\n"
   robot.send output
 
 
 getGeoLookupForLocation = (robot, locationStr) -> new RSVP.Promise (resolve, reject) ->
   getRequest robot, "#{_wgURL}#{_wgApiKey}/geolookup/q/#{locationStr}.json", (err, res, body) ->
     resolve JSON.parse body
+
 
 getForecastForLocation = (robot, link) -> new RSVP.Promise (resolve, reject) ->
   getRequest robot, "#{_wgURL}#{_wgApiKey}/forecast/#{link}.json", (err, res, body) ->
