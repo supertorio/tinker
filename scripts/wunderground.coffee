@@ -1,3 +1,20 @@
+# Description:
+#   Weather via Wunderground
+#
+# Dependencies:
+#   rsvp
+#
+# Configuration:
+#   env variable WUNDERGROUND_KEY must contain valid API Key
+#
+# Commands:
+#   weather <location> - Fetches forecast for a location
+#
+# Notes:
+#
+# Author:
+#   Tori Holmes-Kirk <tori.kirk@gmail.com> (https://github.com/supertorio)
+
 RSVP = require('rsvp');
 
 _wgApiKey = process.env.WUNDERGROUND_KEY
