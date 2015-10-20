@@ -10,8 +10,11 @@ getRequest = (robot, url, callback) ->
     callback(err, res, body)
 
 
-printForecast = (robot, fc) ->
-  robot.send "#{fc.title}: #{fc.fcttext}"
+printForecast = (robot, daysFC) ->
+  output = ""
+  for fc in daysFC
+    output += "*#{fc.title}*: #{fc.fcttext}\n"
+  robot.send output
 
 
 getGeoLookupForLocation = (robot, locationStr) -> new RSVP.Promise (resolve, reject) ->
@@ -30,7 +33,7 @@ getWeatherForLocation = (robot, location) ->
       getForecastForLocation(robot, res.location.l)
         .then (res) ->
           days = res.forecast.txt_forecast.forecastday
-          printForecast robot, fc for fc in days
+          printForecast robot, days
 
 
 
