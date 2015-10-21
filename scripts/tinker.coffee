@@ -23,8 +23,8 @@ module.exports = (robot) ->
       numDays = Math.round((_starWarsDay2015-today)/(1000*60*60*24));
       robot.send ":bb8: Did you know there is only #{numDays} days until Star Wars The Force Awakens?!? :c3p0::stormtrooper:"
 
-  robot.respond /I love you/i, (res) ->
+  robot.respond /[I,i] love you[\!\.]?/i, (res) ->
     res.send "I know..."
 
-  robot.respond /Who shot first\?/i, (res) ->
+  robot.respond /[W,w]ho shot first\?/i, (res) ->
     res.send "HAN. SHOT. FIRST."
