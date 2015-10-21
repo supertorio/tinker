@@ -1,6 +1,19 @@
-###*
-# hubot script for interacting with the MBTA API interactively
-###
+# Description:
+#   MBTA Information via the developer API
+#
+# Dependencies:
+#   none
+#
+# Configuration:
+#   env variable MBTA_API_KEY must contain valid MBTA Developer API Key
+#
+# Commands:
+#   hubot mbta status - displays status messages from the MBTA
+#
+# Notes:
+#
+# Author:
+#   Tori Holmes-Kirk <tori.kirk@gmail.com> (https://github.com/supertorio)
 
 mbtaApiKey = process.env.MBTA_API_KEY
 mbtaURL = 'http://realtime.mbta.com/developer/api/v2/'
@@ -49,7 +62,7 @@ module.exports = (robot) ->
   robot.respond /mbta status/i, (msg) ->
     getMBTAStatus msg
 
-  robot.respond /what is the next (orange|red|green|blue|silver)(?: line)? train at (.*)(.?)/i, (msg) ->
-    line  = msg.match[1]
-    station = msg.match[2]
-    getTimesForStop msg, line, station
+#  robot.respond /what is the next (orange|red|green|blue|silver)(?: line)? train at (.*)(.?)/i, (msg) ->
+#    line  = msg.match[1]
+#    station = msg.match[2]
+#    getTimesForStop msg, line, station

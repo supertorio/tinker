@@ -1,6 +1,20 @@
-###*
-# hubot script for telling Mom Jokes
-###
+# Description:
+#   Insulting Mom Jokes on Demand
+#
+# Dependencies:
+#   none
+#
+# Configuration:
+#   none
+#
+# Commands:
+#   hubot mom joke me - Insults "your" mom....
+#   hubot mom joke me <victim> - Insults a particular person's mother
+#
+# Notes:
+#
+# Author:
+#   Tori Holmes-Kirk <tori.kirk@gmail.com> (https://github.com/supertorio)
 
 jokes = [
     "{victim} mom is so fat, I took a picture of her last Christmas and it's still printing.",
@@ -40,6 +54,11 @@ getMomJoke = (msg, victimName) ->
 
 module.exports = (robot) ->
 
-    robot.respond /tell me about ([a-z\']+) mom/i, (msg) ->
-        victim = msg.match[1]
-        getMomJoke msg, victim
+  robot.respond /mom joke me\s?([a-z]+)?/i, (msg) ->
+    victim = msg.match[1]
+    console.log "expression caught"
+    console.log victim
+    if victim?
+      getMomJoke msg, victim+"'s"
+    else
+      getMomJoke msg, 'your'

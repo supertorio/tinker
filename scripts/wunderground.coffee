@@ -8,7 +8,7 @@
 #   env variable WUNDERGROUND_KEY must contain valid API Key
 #
 # Commands:
-#   weather <location> - Fetches forecast for a location
+#   hubot weather <location> - Fetches forecast for a location
 #
 # Notes:
 #
