@@ -23,7 +23,7 @@ module.exports = (robot) ->
   robot.hear /.*/i, (msg) ->
     natural = require 'natural'
     # path from the root of hubot
-    natural.BayesClassifier.load './src/scripts/twss/classifier-twss.json', null, (err, classifier) ->
+    natural.BayesClassifier.load './scripts/twss/classifier-twss.json', null, (err, classifier) ->
       check = (grams) ->
         c = classifier.getClassifications(grams)
         cmp = {}
