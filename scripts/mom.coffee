@@ -56,8 +56,6 @@ module.exports = (robot) ->
 
   robot.respond /mom joke me\s?([a-z]+)?/i, (msg) ->
     victim = msg.match[1]
-    console.log "expression caught"
-    console.log victim
     if victim?
       getMomJoke msg, victim+"'s"
     else
